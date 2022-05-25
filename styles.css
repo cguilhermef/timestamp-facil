@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+body {
+  background: rebeccapurple;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+}
+
+h1 {
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 300;
+  font-size: 32px;
+  margin: 0 auto;
+}
+.timestamp {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: inset 2px 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 48px;
+  font-weight: 300;
+  padding: 16px;
+  margin: 64px auto 0;
+}
