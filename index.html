@@ -2,6 +2,7 @@
   <head>
     <title>TimestampFácil</title>
     <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
     <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +16,15 @@
     <section>
       <h1>Timestamp Fácil</h1>
       <div class="timestamp js-timestamp">9999/99/99T00:00:00</div>
+
+      <button
+        id="btn-copy"
+        data-clipboard-text="9999/99/99T00:00:00"
+        class="btn-copy"
+      >
+        Copiar
+      </button>
+      <div class="copied">Copiado!</div>
     </section>
   </body>
 </html>
