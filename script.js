@@ -1,37 +1,24 @@
 let timer = null;
+
+function generate() {
+  const t = document.getElementsByClassName('js-timestamp')[0];
+  const a = dayjs().format('YYYYMMDDTHHmmss');
+  t.innerHTML = a;
+  document.getElementById('btn-copy').setAttribute('data-clipboard-text', a);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const b = new ClipboardJS('#btn-copy');
-  const t = document.getElementsByClassName('js-timestamp')[0];
-  t.innerHTML = new Date()
-    .toISOString()
-    .replace(/\:/g, '')
-    .replace(/\-/g, '')
-    .split('.')[0];
-
-  clearTimeout(timer);
-
+  generate();
+  setInterval(function () {
+    generate();
+  }, 5000);
   b.on('success', function () {
     const c = document.querySelector('.copied');
     c.style.display = 'flex';
+    clearTimeout(timer);
     timer = setTimeout(function () {
       c.style.display = 'none';
     }, 1500);
   });
 });
-
-function generate() {
-  const t = document.getElementsByClassName('js-timestamp')[0];
-  const stamp = new Date()
-    .toISOString()
-    .replace(/\:/g, '')
-    .replace(/\-/g, '')
-    .split('.')[0];
-  t.innerHTML = stamp;
-  document
-    .getElementById('btn-copy')
-    .setAttribute('data-clipboard-text', stamp);
-}
-
-setInterval(function () {
-  generate();
-}, 5000);
